@@ -1,0 +1,253 @@
+/* Estilos globais */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  background: url("../img/sky.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: rgb(4, 3, 3);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Estilos para o conteúdo principal */
+.main-content {
+  padding: 20px; /* Espaçamento interno do conteúdo */
+  margin-top: 100px; /* Espaçamento superior para evitar sobreposição com o título */
+}
+
+.container__menu-title {
+  top: 0; /* Coloca o título no topo da página */
+  width: 100%;
+  text-align: center; /* Centraliza o título horizontalmente */
+  margin-top: 5%;
+  padding: 10px;
+  font-size: 75px;
+}
+
+a {
+  font-size: 30px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+
+.Fundo_projeto {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para a div que contém os botões e a frase */
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre os elementos */
+  margin-bottom: 10px; /* Espaçamento inferior para os botões */
+}
+
+/* Estilo para a frase gerada */
+.frase-container p {
+  font-family: "Arial", sans-serif; /* Escolha uma fonte adequada */
+  font-size: 100px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  color: white; /* Cor do texto */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Estilos para botões flutuantes */
+.floating-btn {
+  width: 50px; /* Tamanho dos botões */
+  height: 50px; /* Tamanho dos botões */
+  border-radius: 50%;
+  color: #fff !important; /* Cor do texto */
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  z-index: 1000; /* Coloca o botão acima de outros elementos */
+}
+
+/* Botão flutuante principal */
+.floating-btn.main-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #5962b3 !important; /* Cor de fundo sólida */
+  color: #fff !important; /* Cor do texto */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Botões flutuantes adicionais */
+.floating-btn.Gerador_fotos {
+  position: fixed;
+  bottom: 20px;
+  right: 100px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fbd9d7 !important; /* Cor de fundo sólida */
+  color: #fff !important; /* Cor do texto */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.floating-btn.Gerador_frases {
+  position: fixed;
+  bottom: 20px;
+  right: 260px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #d181b4 !important; /* Cor de fundo sólida */
+  color: #fff !important; /* Cor do texto */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Coloca o botão acima de outros elementos */
+}
+
+.floating-btn.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 180px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fbd9d7 !important; /* Cor de fundo sólida */
+  color: #fff !important; /* Cor do texto */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Coloca o botão acima de outros elementos */
+}
+/* Controla a posição do menu flutuante */
+.floating-menu {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+.floating-menu .floating-btn {
+  width: 50px; /* Tamanho dos botões no menu */
+  height: 50px; /* Tamanho dos botões no menu */
+  border-radius: 50%;
+  color: #fff !important; /* Cor do texto */
+  font-size: 16px;
+}
+
+/* Faz com que os botões apareçam ao se clicar em menu */
+.floating-menu.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Efeito de hover para os botões flutuantes */
+.floating-btn:hover {
+  transform: scale(
+    1.1
+  ); /* Aumenta ligeiramente o tamanho do botão ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada ao passar o mouse */
+}
+
+/* Efeito ao clicar nos botões flutuantes */
+.floating-btn:active {
+  transform: scale(0.9); /* Diminui ligeiramente o tamanho do botão ao clicar */
+  box-shadow: none; /* Remove a sombra ao clicar */
+}
+
+hr {
+  border: none; /* Remove a borda padrão */
+  height: 2px; /* Define a altura do hr */
+  background-color: #ccc; /* Cor de fundo do hr */
+  margin: 20px 0; /* Espaçamento superior e inferior */
+}
+
+/* Estilo para os corações */
+.hearts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+.heart_top1 {
+  position: fixed;
+  font-size: 30px;
+  bottom: 100px;
+  right: 0px; /* Alinha à esquerda */
+  width: 100%; /* Ocupa toda a largura */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  padding: 10px 0; /* Espaçamento interno */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+.heart_top2 {
+  position: fixed;
+  font-size: 30px;
+  bottom: 100px;
+  left: 130px; /* Alinha à direita */
+  width: 100%; /* Ocupa toda a largura */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  padding: 10px 0; /* Espaçamento interno */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.small-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+img {
+  flex-grow: 1;
+  max-width: 180px; /* Tamanho máximo desejado para as imagens */
+  max-height: 180px; /* Tamanho máximo desejado para as imagens */
+  min-height: 180px;
+  min-width: 180px;
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço disponível sem distorcer a proporção */
+  margin: 10px; /* Espaçamento entre as imagens */
+  border-radius: 10px;
+}
+.floating-menu.show {
+  opacity: 1;
+  visibility: visible;
+}

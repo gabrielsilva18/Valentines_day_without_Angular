@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia dos Namorados</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
+  </head>
+  <body>
+    <div class="conteiner__menu-bar">
+      <ul>
+        
+          <a href="https://chat.whatsapp.com/FcBwZzlWnwc7Iij4vNJL42">
+            ❤️Clica aqui Meu Amor!❤️</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="container__menu-title">
+      <h1>❤️🎉MILLY & BIEL🎉❤️</h1>
+    </div>
+
+    <div class="Fundo_projeto">
+      <div class="main-content">
+        <div id="photoContainer">
+          <!-- As imagens serão adicionadas aqui pelo JavaScript 
+          <% imageUrls.forEach((imagens) => { %>
+          <img src="<%- imagens%>" />
+          <% }) %>-->
+        </div>
+        <div class="small-card-content">
+          <h3 id="contentDescription"></h3>
+          <div class="frase-container">
+            <div class="hearts">
+              <span class="heart_top1">❤️ EU TE AMO!</span>
+              <span class="heart_top2">❤️</span>
+            </div>
+            <hr />
+            <p id="fraseCarinhosa"></p>
+            <div class="hearts">
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão flutuante principal -->
+      <div class="floating-btn main-btn" id="menuButton">Menu</div>
+
+      <!-- Botões flutuantes adicionais -->
+      <div class="floating-menu" id="floatingMenu">
+        <div class="floating-btn Gerador_fotos" id="updatePhotosButton">
+          Mostrar Fotos
+        </div>
+        <div class="floating-btn Gerador_frases" id="updatePhraseButton">
+          Mostrar Frases
+        </div>
+        <!-- Controles de música -->
+        <div class="floating-btn music-control" id="musicControlButton">
+          Play Music
+        </div>
+      </div>
+    </div>
+    <script src="../public/js/main.js"></script>
+    <script src="../services/musicService.js"></script>
+    <script src="../services/fraseService.js"></script>
+  </body>
+</html>
